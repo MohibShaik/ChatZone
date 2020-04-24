@@ -11,6 +11,7 @@ import { signUp } from 'src/app/shared/sign-up.model';
 })
 export class SignupComponent implements OnInit {
   public signUpForm: FormGroup;
+
   constructor(private router: Router, private formBuilder: RxFormBuilder) {}
 
   ngOnInit(): void {

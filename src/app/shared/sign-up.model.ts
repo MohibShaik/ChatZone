@@ -7,7 +7,8 @@ import {
 
 export class signUp {
     @required({ message: 'User Name is required' })
-    name: string;
+    @alpha()
+    userName: string;
 
     @required({ message: 'Email is required' })
     email: string;
@@ -15,9 +16,11 @@ export class signUp {
     @required({ message: 'Phone number is required' })
     phnum: number;
 
-    @required({ message: 'password is required' })
-    password: any;
+    @required()
+    @minLength({value:8,})
+    password: string;
 
-    @required({ message: 'conPassword is required' })
-    conPassword: string;
+    @required()
+    @compare({fieldName:'password'})
+    confirmPassword: string;
 }

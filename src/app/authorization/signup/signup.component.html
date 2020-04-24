@@ -11,9 +11,9 @@
                 <div class="wrapper">
                     <mat-form-field class="email-field">
                         <mat-label>Username</mat-label>
-                        <input matInput type="name" [formControl]='signUpForm.controls.name'>
-                        <mat-error *ngIf="signUpForm.controls.name.errors">
-                            {{signUpForm.controls.name.errors.required.message}}</mat-error>
+                        <input matInput type="userName"formControlName="userName" class="form-control" >
+                        <mat-error class="form-text text-danger" *ngIf="signUpForm.controls.userName.errors && signUpForm.controls.userName.errors.required">{{signUpForm.controls.userName.errors.required.message}}</mat-error>
+                        <mat-error  class="form-text text-danger" *ngIf="signUpForm.controls.userName.errors && signUpForm.controls.userName.errors.alpha">{{signUpForm.controls.userName.errors.alpha.message}}</mat-error>
                     </mat-form-field>
 
                     <mat-form-field class="email-field">
@@ -32,19 +32,21 @@
 
                     <mat-form-field class="password-field">
                         <mat-label>Password</mat-label>
-                        <input matInput type="password" [formControl]='signUpForm.controls.password'>
-                        <mat-error *ngIf="signUpForm.controls.password.errors">
+                        <input matInput type="password"  formControlName="password" class="form-control" >
+                        <mat-error *ngIf="signUpForm.controls.password.errors && signUpForm.controls.password.errors.required">
                             {{signUpForm.controls.password.errors.required.message}}</mat-error>
+                        <mat-error class="form-text text-danger" *ngIf="signUpForm.controls.password.errors && signUpForm.controls.password.errors.minLength">
+                            {{signUpForm.controls.password.errors.minLength.message}}</mat-error>
                     </mat-form-field>
                     
                     <mat-form-field class="password-field">
                         <mat-label>Confirm Password</mat-label>
-                        <input matInput type="conPassword" [formControl]='signUpForm.controls.conPassword'>
-                        <mat-error *ngIf="signUpForm.controls.conPassword.errors">
-                            {{signUpForm.controls.conPassword.errors.required.message}}</mat-error>
+                        <input matInput type="confirmPassword" formControlName="confirmPassword" class="form-control" >
+                        <mat-error class="form-text text-danger" *ngIf="signUpForm.controls.confirmPassword.errors && signUpForm.controls.confirmPassword.errors.compare">
+                            {{signUpForm.controls.confirmPassword.errors.compare.message}}</mat-error>
                     </mat-form-field>
 
-                    <button mat-raised-button>SignUp</button><br>
+                    <button [disabled]="!signUpForm.valid"  mat-raised-button>SignUp</button><br>
 
                 </div>
             </form>
