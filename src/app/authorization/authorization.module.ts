@@ -6,9 +6,10 @@ import { SigninComponent } from './signin/signin.component';
 import { MaterialModule } from '../material/material.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RxReactiveFormsModule } from '@rxweb/reactive-form-validators';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
-  declarations: [SigninComponent],
+  declarations: [SigninComponent, SignupComponent],
   imports: [
     CommonModule,
     AuthorizationRoutingModule,

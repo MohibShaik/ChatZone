@@ -23,7 +23,9 @@
                             {{signInForm.controls.password.errors.required.message}}</mat-error>
                     </mat-form-field>
 
-                    <button mat-raised-button>Login</button>
+                    <button mat-raised-button>SignIn</button><br>
+                    <p style="padding: 10px;">Not registered? <a routerLink="/signup"
+                            routerLinkActive="active">SignUp</a></p>
 
                 </div>
             </form>
@@ -31,3 +33,17 @@
 
     </mat-card>
 </div>
+
+<!-- <div class="hero">
+    <mat-card class="login-card">
+        <mat-card-header> 
+            <mat-card-title>
+                <span>C</span>HAT <span>Z</span>ONE
+            </mat-card-title>
+        </mat-card-header>
+        <mat-tab-group>
+            <mat-tab label="SignIn"> Content 1 </mat-tab>
+            <mat-tab label="SignUp"> Content 2 </mat-tab>
+        </mat-tab-group>
+    </mat-card>
+</div> -->

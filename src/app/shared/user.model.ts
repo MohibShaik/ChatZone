@@ -11,3 +11,5 @@ export class User {
   @required({ message: 'Password is required' })
   password: string;
 }
+
+

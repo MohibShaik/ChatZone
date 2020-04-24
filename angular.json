@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ChatZone"
+    }
+  },
+  "defaultProject": "ChatZone",
+  "cli": {
+    "analytics": "83640395-d7f0-48f5-917c-4c59eea31756"
+  }
 }

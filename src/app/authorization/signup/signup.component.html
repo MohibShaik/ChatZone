@@ -1,0 +1,54 @@
+<div class="me_signup">
+    <mat-card class="signup-card">
+        <mat-card-header>
+            <!-- <mat-icon mat-card-avatar svgIcon="InsertedChart"></mat-icon> -->
+            <mat-card-title>
+                <span >S</span>ign-up
+            </mat-card-title>
+        </mat-card-header><hr>
+        <mat-card-content>
+            <form novalidate [formGroup]="signUpForm" (ngSubmit)="submit()">
+                <div class="wrapper">
+                    <mat-form-field class="email-field">
+                        <mat-label>Username</mat-label>
+                        <input matInput type="name" [formControl]='signUpForm.controls.name'>
+                        <mat-error *ngIf="signUpForm.controls.name.errors">
+                            {{signUpForm.controls.name.errors.required.message}}</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="email-field">
+                        <mat-label>Email</mat-label>
+                        <input matInput type="email" [formControl]='signUpForm.controls.email'>
+                        <mat-error *ngIf="signUpForm.controls.email.errors">
+                            {{signUpForm.controls.email.errors.required.message}}</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="email-field">
+                        <mat-label>Phone Number</mat-label>
+                        <input matInput type="phnum" [formControl]='signUpForm.controls.phnum'>
+                        <mat-error *ngIf="signUpForm.controls.phnum.errors">
+                            {{signUpForm.controls.phnum.errors.required.message}}</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="password-field">
+                        <mat-label>Password</mat-label>
+                        <input matInput type="password" [formControl]='signUpForm.controls.password'>
+                        <mat-error *ngIf="signUpForm.controls.password.errors">
+                            {{signUpForm.controls.password.errors.required.message}}</mat-error>
+                    </mat-form-field>
+                    
+                    <mat-form-field class="password-field">
+                        <mat-label>Confirm Password</mat-label>
+                        <input matInput type="conPassword" [formControl]='signUpForm.controls.conPassword'>
+                        <mat-error *ngIf="signUpForm.controls.conPassword.errors">
+                            {{signUpForm.controls.conPassword.errors.required.message}}</mat-error>
+                    </mat-form-field>
+
+                    <button mat-raised-button>SignUp</button><br>
+
+                </div>
+            </form>
+        </mat-card-content>
+
+    </mat-card>
+</div>
