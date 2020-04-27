@@ -11,7 +11,7 @@
                 <div class="wrapper">
                     <mat-form-field class="email-field">
                         <mat-label>Username</mat-label>
-                        <input matInput type="userName"formControlName="userName" class="form-control" >
+                        <input matInput type="text"formControlName="userName" class="form-control" >
                         <mat-error class="form-text text-danger" *ngIf="signUpForm.controls.userName.errors && signUpForm.controls.userName.errors.required">{{signUpForm.controls.userName.errors.required.message}}</mat-error>
                         <mat-error  class="form-text text-danger" *ngIf="signUpForm.controls.userName.errors && signUpForm.controls.userName.errors.alpha">{{signUpForm.controls.userName.errors.alpha.message}}</mat-error>
                     </mat-form-field>
@@ -25,7 +25,7 @@
 
                     <mat-form-field class="email-field">
                         <mat-label>Phone Number</mat-label>
-                        <input matInput type="phnum" [formControl]='signUpForm.controls.phnum'>
+                        <input matInput type="number" [formControl]='signUpForm.controls.phnum'>
                         <mat-error *ngIf="signUpForm.controls.phnum.errors">
                             {{signUpForm.controls.phnum.errors.required.message}}</mat-error>
                     </mat-form-field>
@@ -33,6 +33,9 @@
                     <mat-form-field class="password-field">
                         <mat-label>Password</mat-label>
                         <input matInput type="password"  formControlName="password" class="form-control" >
+                        <!-- <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button> -->
                         <mat-error *ngIf="signUpForm.controls.password.errors && signUpForm.controls.password.errors.required">
                             {{signUpForm.controls.password.errors.required.message}}</mat-error>
                         <mat-error class="form-text text-danger" *ngIf="signUpForm.controls.password.errors && signUpForm.controls.password.errors.minLength">
@@ -41,7 +44,7 @@
                     
                     <mat-form-field class="password-field">
                         <mat-label>Confirm Password</mat-label>
-                        <input matInput type="confirmPassword" formControlName="confirmPassword" class="form-control" >
+                        <input matInput type="password" formControlName="confirmPassword" class="form-control" >
                         <mat-error class="form-text text-danger" *ngIf="signUpForm.controls.confirmPassword.errors && signUpForm.controls.confirmPassword.errors.compare">
                             {{signUpForm.controls.confirmPassword.errors.compare.message}}</mat-error>
                     </mat-form-field>

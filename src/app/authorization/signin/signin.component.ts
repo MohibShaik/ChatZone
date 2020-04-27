@@ -16,6 +16,7 @@ import { User } from 'src/app/shared/user.model';
   encapsulation: ViewEncapsulation.None,
 })
 export class SigninComponent implements OnInit {
+  // hide = true;
   public signInForm: FormGroup;
   constructor(private router: Router, private formBuilder: RxFormBuilder) {}
 
