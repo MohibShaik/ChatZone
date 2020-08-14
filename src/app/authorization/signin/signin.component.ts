@@ -1,13 +1,14 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-// import { RxwebValidators } from '@rxweb/reactive-form-validators';
 import {
   RxFormBuilder,
   IFormGroup,
   RxwebValidators,
 } from '@rxweb/reactive-form-validators';
 import { User } from 'src/app/shared/user.model';
+import * as firebase from 'firebase';
+import { FirebaseAuthService } from '../../core/services/firebase-auth.service';
 
 @Component({
   selector: 'app-signin',
@@ -17,7 +18,13 @@ import { User } from 'src/app/shared/user.model';
 })
 export class SigninComponent implements OnInit {
   public signInForm: FormGroup;
-  constructor(private router: Router, private formBuilder: RxFormBuilder) {}
+  public hide: boolean = true;
+  public ref = firebase.database().ref('users/');
+  constructor(
+    private router: Router,
+    private formBuilder: RxFormBuilder,
+    private authService: FirebaseAuthService
+  ) {}
 
   ngOnInit(): void {
     let user = new User();
@@ -25,6 +32,8 @@ export class SigninComponent implements OnInit {
   }
 
   public submit() {
-    console.log(this.signInForm.valid);
+    let email = this.signInForm.controls.email.value;
+    let password = this.signInForm.controls.password.value;
+    this.authService.login(email, password);
   }
 }

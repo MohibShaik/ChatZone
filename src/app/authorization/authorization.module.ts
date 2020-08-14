@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AuthorizationRoutingModule } from './authorization-routing.module';
-// import { SignupComponent } from './signup/signup.component';
 import { SigninComponent } from './signin/signin.component';
 import { MaterialModule } from '../material/material.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RxReactiveFormsModule } from '@rxweb/reactive-form-validators';
+import { FirebaseAuthService } from '../core/services/firebase-auth.service';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @NgModule({
   declarations: [SigninComponent],
@@ -17,5 +18,6 @@ import { RxReactiveFormsModule } from '@rxweb/reactive-form-validators';
     FormsModule,
     RxReactiveFormsModule,
   ],
+  providers: [],
 })
 export class AuthorizationModule {}
