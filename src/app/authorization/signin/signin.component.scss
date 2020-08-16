@@ -120,7 +120,7 @@
             }
 
             .login100-form-btn {
-              font-family: cursive !important;
+              font-family: cursive;
               font-size: 15px;
               color: #fff;
               line-height: 1.2;
@@ -135,6 +135,7 @@
               padding: 0 20px;
               width: 100%;
               height: 50px;
+              letter-spacing: 2px !important;
             }
           }
         }
@@ -150,12 +151,19 @@
       background: #fff;
       border-radius: 10px;
       overflow: hidden;
-      padding: 77px 55px 33px 55px;
+      padding: 78px 55px 33px 55px;
 
       &.login-card {
         width: 280px;
-        height: 420px;
+        height: 528px;
         border-radius: 10px;
+      }
+
+      .login100-form-btn,
+      .mat-form-field,
+      .mat-input-element,
+      .login100-form-title {
+        font-family: Roboto !important;
       }
     }
   }
