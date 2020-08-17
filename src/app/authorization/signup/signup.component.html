@@ -1,0 +1,52 @@
+<div class="hero">
+    <mat-card class="login-card">
+        <div class="head-container">
+            <div class="login100-form-title p-b-10">
+                Create a new account
+            </div>
+            <div class="sub-title">
+                It's quick and easy.
+            </div>
+
+        </div>
+
+        <mat-card-content>
+            <form novalidate [formGroup]="signUpForm" (ngSubmit)="signUp()">
+                <div class="wrapper">
+
+                    <mat-form-field class="userName-field">
+                        <mat-label>User Name</mat-label>
+                        <input matInput type="text" [formControl]='signUpForm.controls.userName'>
+                        <mat-error *ngIf="signUpForm.controls.userName.errors">
+                            {{signUpForm.controls.userName.errors.required.message}}</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="email-field">
+                        <mat-label>Email</mat-label>
+                        <input matInput type="email" [formControl]='signUpForm.controls.email'>
+                        <mat-error *ngIf="signUpForm.controls.email.errors">
+                            {{signUpForm.controls.email.errors.required.message}}</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="password-field">
+                        <mat-label>Password</mat-label>
+                        <input matInput [type]="hide ? 'password' : 'text'"
+                            [formControl]='signUpForm.controls.password'>
+
+                        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+
+                        <mat-error *ngIf="signUpForm.controls.password.errors">
+                            {{signUpForm.controls.password.errors.required.message}}</mat-error>
+                    </mat-form-field>
+
+                    <div class="container-login100-form-btn">
+                        <div class="wrap-login100-form-btn">
+                            <div class="login100-form-bgbtn"></div>
+                            <button class="login100-form-btn">SignUp</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

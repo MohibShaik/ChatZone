@@ -1,8 +1,8 @@
 .hero {
+  background: #f2f2f2;
   display: flex;
   height: 100vh;
   width: 100vw;
-  background: #f2f2f2;
 
   .mat-card {
     margin: auto;
@@ -16,24 +16,28 @@
       height: 420px;
       border-radius: 10px;
     }
-    .mat-card-header {
-      .mat-card-header-text {
-        margin: auto;
-      }
-
+    .head-container {
+      padding-bottom: 25px;
+      font-family: cursive;
       .login100-form-title {
-        display: block;
-        font-family: cursive;
-        font-size: 40px;
         color: rgb(34, 34, 70);
-        line-height: 1.2;
-        text-align: center;
+        font-weight: 500;
+        letter-spacing: normal;
+        font-size: 27px;
       }
 
-      .p-b-45 {
-        padding-bottom: 45px;
+      .p-b-10 {
+        padding-bottom: 10px;
+      }
+
+      .sub-title {
+        color: #4b4f56;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 28px;
       }
     }
+
     .mat-card-content {
       margin-bottom: 130rem;
 
@@ -62,7 +66,10 @@
           .btn-show-pass {
             font-size: 15px;
             color: #999999;
-
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -moz-box;
+            display: -ms-flexbox;
             display: flex;
             align-items: center;
             position: absolute;
@@ -71,7 +78,9 @@
             right: 0;
             padding-right: 5px;
             cursor: pointer;
-
+            -webkit-transition: all 0.4s;
+            -o-transition: all 0.4s;
+            -moz-transition: all 0.4s;
             transition: all 0.4s;
           }
         }
@@ -102,6 +111,7 @@
               z-index: -1;
               width: 300%;
               height: 100%;
+              background: #fdbcb4;
               top: 0;
               left: -100%;
               transition: all 0.4s;
@@ -109,13 +119,12 @@
 
             .login100-form-btn {
               font-family: cursive;
-              font-weight: 600;
               font-size: 15px;
               color: rgb(34, 34, 70);
               line-height: 1.2;
               text-transform: uppercase;
-              // background: -webkit-linear-gradient(right, #fdbcb4, #fff);
-              background: #fdbcb4;
+              font-weight: 600;
+              display: flex;
               justify-content: center;
               align-items: center;
               padding: 0 20px;
@@ -165,7 +174,7 @@
   @media (max-width: 768px) {
     .mat-card {
       margin: 0px !important;
-
+      background: #fff;
       border-radius: 10px;
       overflow: hidden;
       padding: 78px 45px 33px 45px;
@@ -179,7 +188,8 @@
       .login100-form-btn,
       .mat-form-field,
       .mat-input-element,
-      .login100-form-title {
+      .login100-form-title,
+      .sub-title {
         font-family: Roboto !important;
       }
     }
@@ -187,6 +197,7 @@
     .register-section {
       font-size: 15px;
       font-family: Roboto !important;
+      font-weight: 500;
     }
     .frgt-psswd-section {
       font-size: 15px;

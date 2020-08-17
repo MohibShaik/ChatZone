@@ -11,13 +11,12 @@ import * as firebase from 'firebase';
 import { FirebaseAuthService } from '../../core/services/firebase-auth.service';
 
 @Component({
-  selector: 'app-signin',
-  templateUrl: './signin.component.html',
-  styleUrls: ['./signin.component.scss'],
-  encapsulation: ViewEncapsulation.None,
+  selector: 'app-signup',
+  templateUrl: './signup.component.html',
+  styleUrls: ['./signup.component.scss'],
 })
-export class SigninComponent implements OnInit {
-  public signInForm: FormGroup;
+export class SignupComponent implements OnInit {
+  public signUpForm: FormGroup;
   public hide: boolean = true;
 
   constructor(
@@ -28,12 +27,13 @@ export class SigninComponent implements OnInit {
 
   ngOnInit(): void {
     let user = new User();
-    this.signInForm = this.formBuilder.formGroup(user);
+    this.signUpForm = this.formBuilder.formGroup(user);
   }
 
-  public submit() {
-    let email = this.signInForm.controls.email.value;
-    let password = this.signInForm.controls.password.value;
-    this.authService.signIn(email, password);
+  public signUp() {
+    let userName = this.signUpForm.controls.email.value;
+    let email = this.signUpForm.controls.email.value;
+    let password = this.signUpForm.controls.password.value;
+    this.authService.signUp(email, password);
   }
 }

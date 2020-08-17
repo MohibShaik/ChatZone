@@ -10,4 +10,7 @@ export class User {
 
   @required({ message: 'Password is required' })
   password: string;
+
+  @required({ message: 'User Name is required' })
+  userName: string;
 }
