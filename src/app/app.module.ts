@@ -9,6 +9,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import * as firebase from 'firebase';
 import { AngularFireAuthModule, AngularFireAuth } from '@angular/fire/auth';
+import { HttpClientModule } from '@angular/common/http';
 
 var firebaseConfig = {
   apiKey: 'AIzaSyAuE0-VliRsDENT0zffutc4f1p0T9UFSoU',
@@ -29,6 +30,7 @@ var firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

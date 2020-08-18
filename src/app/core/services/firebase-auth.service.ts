@@ -20,7 +20,12 @@ export class FirebaseAuthService {
         }
       })
       .catch((err) => {
-        alert(err.message);
+        console.log(err);
+        if (err.code === 'auth/wrong-password') {
+          alert('wrong password');
+        } else {
+          alert('user not found , Please check your credentials');
+        }
       });
   }
 

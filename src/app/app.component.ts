@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import * as firebase from 'firebase';
 import { ConfigDetails } from './shared/enums/firebase-config.enum';
 import { FirebaseAuthService } from './core/services/firebase-auth.service';
+import { MatIconRegistry } from '@angular/material/icon';
+import { DomSanitizer } from '@angular/platform-browser';
 
 var firebaseConfig = {
   apiKey: 'AIzaSyAuE0-VliRsDENT0zffutc4f1p0T9UFSoU',
@@ -18,8 +20,18 @@ var firebaseConfig = {
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  constructor() {
+  constructor(
+    private matIconRegistry: MatIconRegistry,
+    private domSanitizer: DomSanitizer
+  ) {
     firebase.initializeApp(firebaseConfig);
+
+    this.matIconRegistry.addSvgIcon(
+      `user-icon`,
+      this.domSanitizer.bypassSecurityTrustResourceUrl(
+        '../assets/images/svg/user.svg'
+      )
+    );
   }
   title = "M'Chat";
 }
